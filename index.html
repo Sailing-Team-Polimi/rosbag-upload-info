@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sailing Rosbag Upload: trasferimento delle registrazioni ROS della barca su Google Drive per il Polimi Sailing Team.">
+  <title>Sailing Rosbag Upload · Polimi Sailing Team</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Polimi Sailing Team</a>
+      <nav aria-label="Navigazione principale">
+        <a href="index.html" aria-current="page">Il progetto</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenuto" class="container">
+    <section class="intro" aria-labelledby="titolo">
+      <p class="eyebrow">Registrazioni di bordo</p>
+      <h1 id="titolo">Sailing Rosbag Upload</h1>
+      <p class="lead">Le registrazioni della barca, disponibili al team anche dopo l’uscita in acqua.</p>
+      <p>Sailing Rosbag Upload è uno strumento del Polimi Sailing Team che copia su Google Drive
+        le registrazioni prodotte dal sistema ROS della barca. Aiuta il team a recuperare i dati
+        per le analisi tecniche, senza dover copiare ogni registrazione a mano dal Raspberry.</p>
+      <a class="button" href="privacy.html">Leggi l’informativa privacy <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section aria-labelledby="funzionamento">
+      <h2 id="funzionamento">Come funziona</h2>
+      <ol class="steps">
+        <li><strong>Registrazione locale.</strong> ROS salva i dati sul Raspberry in file chiamati
+          rosbag. Il loro contenuto dipende dai topic registrati: per esempio misure dei sensori,
+          posizione GPS e stato dei sistemi di bordo.</li>
+        <li><strong>Copia dopo la chiusura.</strong> Quando una registrazione termina regolarmente,
+          l’uploader può copiarla nella cartella Google Drive configurata dal team. Se il collegamento
+          non è disponibile, conserva la registrazione in attesa di un nuovo tentativo.</li>
+        <li><strong>Verifica del trasferimento.</strong> Il programma controlla il risultato della copia.
+          I file locali rimangono sul Raspberry anche dopo il caricamento.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="google">
+      <h2 id="google">Perché viene richiesto l’accesso a Google Drive</h2>
+      <p>Un membro autorizzato del team collega l’account Google tramite la schermata di consenso
+        di Google. Il programma usa rclone per creare le cartelle delle registrazioni, caricare i file
+        e confrontarli con le copie locali.</p>
+      <p>L’autorizzazione richiesta è lo scope <code>drive</code>, che consente un accesso ampio ai file
+        dell’account. Il codice dell’uploader indirizza le operazioni alla cartella configurata;
+        questa scelta non restringe tecnicamente il token a quella sola cartella.</p>
+      <p>L’applicazione è destinata all’uso del team. Questo sito presenta il progetto e la sua
+        gestione dei dati: il login Google e il caricamento vengono eseguiti dal programma sul
+        dispositivo, non da questa pagina.</p>
+    </section>
+
+    <section class="contact" aria-labelledby="contatti">
+      <h2 id="contatti">Contatti e gestione dei dati</h2>
+      <p>Per assistenza o richieste sui dati, scrivi a
+        <a href="mailto:polimisailingteam@gmail.com">polimisailingteam@gmail.com</a>.</p>
+      <p>L’<a href="privacy.html">informativa privacy</a> descrive i dati utilizzati,
+        la loro conservazione e come revocare l’accesso.</p>
+    </section>
+  </main>
+  <footer class="container site-footer">
+    <span>Polimi Sailing Team · Sailing Rosbag Upload</span>
+    <a href="privacy.html">Informativa privacy</a>
+  </footer>
+</body>
+</html>

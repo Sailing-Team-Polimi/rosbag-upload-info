@@ -1,0 +1,9 @@
+# Questo repository contiene soltanto le pagine informative pubbliche.
+rclone.conf
+rclone.conf.*
+client_secret*.json
+.env
+.env.*
+*.mcap
+*.db3
+__pycache__/

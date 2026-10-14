@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Informativa privacy di Sailing Rosbag Upload: dati utilizzati, accesso a Google Drive, conservazione e revoca dell’autorizzazione.">
+  <title>Informativa privacy · Sailing Rosbag Upload</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Polimi Sailing Team</a>
+      <nav aria-label="Navigazione principale">
+        <a href="index.html">Il progetto</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenuto" class="container policy">
+    <div class="intro">
+      <p class="eyebrow">Sailing Rosbag Upload</p>
+      <h1>Informativa privacy</h1>
+      <p class="updated">Ultimo aggiornamento: <time datetime="2026-10-14">14 ottobre 2026</time></p>
+      <p class="lead">Come il programma usa i dati e l’autorizzazione a Google Drive.</p>
+    </div>
+
+    <section aria-labelledby="gestore">
+      <h2 id="gestore">Chi gestisce il programma</h2>
+      <p>Sailing Rosbag Upload è gestito dal Polimi Sailing Team per trasferire e rendere disponibili
+        al team le registrazioni del sistema ROS di bordo. Per informazioni o richieste relative
+        ai dati, contatta <a href="mailto:polimisailingteam@gmail.com">polimisailingteam@gmail.com</a>.</p>
+    </section>
+
+    <section aria-labelledby="dati">
+      <h2 id="dati">Quali dati vengono utilizzati</h2>
+      <ul>
+        <li><strong>Registrazioni ROS:</strong> file rosbag e relativi metadati. In base ai topic
+          registrati, possono contenere misure dei sensori, posizione e orari GPS, stato dei
+          controlli e informazioni diagnostiche. Dati di posizione e orari possono riguardare
+          anche persone identificabili in relazione all’attività della barca.</li>
+        <li><strong>Dati dei file su Google Drive:</strong> identificativi di cartelle e file,
+          nomi, dimensioni e checksum necessari a individuare la destinazione e verificare
+          le copie. Il programma trasferisce su Drive il contenuto delle registrazioni locali.</li>
+        <li><strong>Autorizzazione Google:</strong> token OAuth necessari per accedere a Drive
+          e rinnovare l’accesso. La password dell’account viene gestita da Google e non viene
+          richiesta o salvata dall’uploader.</li>
+        <li><strong>Stato dei trasferimenti:</strong> ricevute locali e log con nomi delle
+          registrazioni, esiti delle operazioni ed eventuali errori.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="finalita">
+      <h2 id="finalita">Perché vengono utilizzati</h2>
+      <p>I dati servono a copiare le registrazioni nella cartella Drive configurata, controllare
+        i caricamenti, evitare copie già completate e riprovare i trasferimenti interrotti.
+        Le registrazioni sono destinate alle analisi tecniche e alla diagnosi dei sistemi della barca
+        da parte dei membri autorizzati del team.</p>
+      <p>L’applicazione non usa i dati ottenuti tramite Google Drive per pubblicità, profilazione
+        commerciale, vendita di dati o addestramento di modelli di intelligenza artificiale.</p>
+    </section>
+
+    <section aria-labelledby="permessi">
+      <h2 id="permessi">Permessi Google e accesso ai file</h2>
+      <p>Il collegamento usa OAuth con lo scope <code>https://www.googleapis.com/auth/drive</code>.
+        Questo permesso consente di leggere e modificare i file accessibili all’account e di eliminarli.
+        È più ampio della sola cartella delle rosbag.</p>
+      <p>L’uploader è configurato per operare sulla cartella scelta dal team: crea sottocartelle,
+        carica le registrazioni e legge i metadati necessari alla verifica. Non prevede la
+        cancellazione automatica delle registrazioni. L’identificativo della cartella indirizza
+        le operazioni del programma, ma non costituisce una limitazione dei permessi del token.</p>
+    </section>
+
+    <section aria-labelledby="conservazione">
+      <h2 id="conservazione">Dove e per quanto tempo sono conservati</h2>
+      <p>Le registrazioni restano sul Raspberry e vengono copiate su Google Drive. Le copie locali
+        non vengono eliminate dopo il caricamento. Non è prevista una scadenza automatica:
+        il team gestisce la conservazione e la rimozione in funzione delle esigenze di analisi
+        e dello spazio disponibile.</p>
+      <p>I token sono conservati nel file privato di configurazione di rclone sui dispositivi
+        utilizzati per configurare o eseguire il programma, come il PC di configurazione e il
+        Raspberry. Questo file deve essere accessibile soltanto alle persone e ai processi
+        autorizzati e non deve essere pubblicato in repository o cartelle condivise.</p>
+      <p>I collegamenti con le API Google usano HTTPS. Le ricevute e i log restano nei sistemi
+        locali del team secondo la configurazione di tali sistemi.</p>
+    </section>
+
+    <section aria-labelledby="destinatari">
+      <h2 id="destinatari">Chi può accedere ai dati</h2>
+      <p>Google riceve i file per fornire il servizio Drive e gestisce l’autorizzazione OAuth.
+        Si applica anche l’<a href="https://policies.google.com/privacy">informativa privacy di Google</a>.</p>
+      <p>I file caricati sono accessibili secondo i permessi della cartella Drive e delle sue
+        eventuali condivisioni, impostati dal team. L’uploader non modifica i permessi di condivisione
+        e non rende automaticamente pubbliche le registrazioni. Il team deve verificare che tali
+        permessi siano coerenti con l’accesso desiderato.</p>
+      <p>L’uso e il trasferimento delle informazioni ricevute dalle API Google rispettano la
+        <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+        compresi i requisiti di utilizzo limitato (Limited Use).</p>
+    </section>
+
+    <section aria-labelledby="revoca">
+      <h2 id="revoca">Revoca dell’accesso e cancellazione</h2>
+      <p>Puoi rimuovere l’autorizzazione di Sailing Rosbag Upload dalla sezione
+        <a href="https://myaccount.google.com/connections">connessioni con app e servizi di terze parti
+        dell’account Google</a>. Dopo la revoca, il programma non potrà continuare ad accedere
+        a Drive con quell’autorizzazione.</p>
+      <p>La revoca non elimina i file già caricati né le copie locali. Per richiedere accesso,
+        chiarimenti o cancellazione dei dati, scrivi al contatto del team indicato sopra.
+        Per interrompere i caricamenti è inoltre possibile disabilitare il nodo uploader.
+        Prima di rimuovere una registrazione da Drive, il team deve gestire anche la copia locale
+        e la coda, per evitare un successivo caricamento della stessa registrazione.</p>
+    </section>
+
+    <section aria-labelledby="sito">
+      <h2 id="sito">Navigazione su questo sito</h2>
+      <p>Queste pagine sono ospitate su GitHub Pages. Non includono moduli di login, strumenti
+        di analisi, cookie impostati dal sito, script o contenuti incorporati di terze parti.
+        GitHub può registrare dati tecnici delle visite, incluso l’indirizzo IP, per il funzionamento
+        e la sicurezza del servizio. Consulta l’
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">informativa privacy di GitHub</a>.</p>
+    </section>
+
+    <section aria-labelledby="modifiche">
+      <h2 id="modifiche">Aggiornamenti dell’informativa</h2>
+      <p>Il team aggiornerà questa pagina quando cambieranno le modalità di trattamento descritte.
+        In caso di nuovi utilizzi dei dati Google, informerà gli utenti interessati e richiederà
+        un nuovo consenso prima di utilizzare i dati per le nuove finalità.</p>
+    </section>
+  </main>
+  <footer class="container site-footer">
+    <a href="index.html">Sailing Rosbag Upload</a>
+    <a href="mailto:polimisailingteam@gmail.com">Contatta il team</a>
+  </footer>
+</body>
+</html>
